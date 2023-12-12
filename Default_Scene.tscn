@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcr0mwwrj70xr"]
+
+[ext_resource type="PackedScene" uid="uid://bvushvhnluiym" path="res://Player_Scene.tscn" id="1_md87p"]
+[ext_resource type="Script" path="res://GameManager.gd" id="3_2pyuo"]
+[ext_resource type="PackedScene" uid="uid://wticof34d4x3" path="res://base.tscn" id="3_mpirc"]
+
+[node name="Root" type="Node2D"]
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("3_2pyuo")
+
+[node name="Player" parent="." instance=ExtResource("1_md87p")]
+position = Vector2(175, 438)
+
+[node name="Base" parent="." instance=ExtResource("3_mpirc")]
+
+[node name="Projectiles" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[connection signal="grenadeSignal" from="Player" to="GameManager" method="_on_player_grenade_signal"]
+[connection signal="laserSignal" from="Player" to="GameManager" method="_on_player_laser_signal"]
