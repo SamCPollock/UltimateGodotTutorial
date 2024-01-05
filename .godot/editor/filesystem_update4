@@ -1,6 +1,7 @@
-res://Player_Scene.tscn
-res://Player_Script.gd
 res://Default_Scene.tscn
+res://Player_Scene.tscn
 res://drone.tscn
 res://laser.tscn
-res://laser.gd
+res://Player_Script.gd
+res://grenade.tscn
+res://grenade.gd
