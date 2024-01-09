@@ -35,5 +35,10 @@ position = Vector2(128, 12)
 [node name="LaserSpawner2" type="Marker2D" parent="LaserSpawners"]
 position = Vector2(128, 28)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
 [connection signal="timeout" from="Timer_Shoot" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer_Grenade" to="." method="_on_timer_grenade_timeout"]

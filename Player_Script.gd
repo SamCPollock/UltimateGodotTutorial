@@ -29,10 +29,12 @@ func _process(_delta):
 	if (Input.is_action_just_pressed("Action1") and canShoot): 	# Launching a lazer
 		print("Shooting!")
 		
-		var laserInstance = laser_scene.instantiate()
+		var laserInstance = laser_scene.instantiate() as Area2D
 		var player_direction = (get_global_mouse_position() - position).normalized() # Set direction for grenade spawn		
+		#laserInstance.rotation_degrees = rad_to_deg(direction.angle()) + 90		
 		laserInstance.direction = player_direction
 		laserInstance.look_at(player_direction)
+		laserInstance.rotation_degrees = laserInstance.rotation_degrees + 90
 		laserInstance.position = laserSpawners[randi() % laserSpawners.size()].global_position
 		%Projectiles.add_child(laserInstance)
 		
